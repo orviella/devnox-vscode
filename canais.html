@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101c19" />
+  <title>Canais · DevNox</title>
+  <link rel="stylesheet" href="./src/style.css" />
+  <script src="./vendor/supabase.js"></script>
+  <script src="./vendor/lucide.min.js"></script>
+</head>
+
+<body data-page="channels">
+  <div id="app"><main class="startup-error"><h1>DevNox · Telegram</h1><p>Carregando seu espaço...</p></main></div>
+  <!-- Estrutura visual do painel. O JavaScript só preenche dados e ativa as ações. -->
+  <template id="workspace-template">
+    <aside class="sidebar">
+      <a class="brand" href="./nova-campanha.html"><span class="brand-mark"><i data-lucide="send"></i></span>DevNox<span class="brand-dot">.</span></a>
+      <div class="workspace"><span class="workspace-icon">D</span><div>Meu espaço<small>Central de mensagens</small></div><i data-lucide="chevrons-up-down"></i></div>
+      <p class="nav-label">PRINCIPAL</p>
+      <nav aria-label="Menu principal">
+        <a href="./nova-campanha.html" data-nav="compose"><i data-lucide="square-pen"></i>Nova campanha<span class="nav-plus">+</span></a>
+        <a href="./campanhas.html" data-nav="campaigns"><i data-lucide="layers"></i>Campanhas</a>
+        <a href="./contatos.html" data-nav="contacts"><i data-lucide="users"></i>Contatos</a>
+        <a href="./canais.html" data-nav="channels"><i data-lucide="plug"></i>Canais</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <nav aria-label="Minha conta">
+          <a href="./configuracoes.html" data-nav="settings"><i data-lucide="settings-2"></i>Configurações</a>
+          <a href="./perfil.html" data-nav="profile"><i data-lucide="circle-user-round"></i>Meu perfil</a>
+        </nav>
+        <button class="account" id="account"><span class="avatar" id="account-avatar">D</span><span><span id="account-name">Minha conta</span><small id="account-email"></small></span><i data-lucide="arrow-up-right"></i></button>
+      </div>
+    </aside>
+    <div class="main">
+      <header class="topbar">
+        <span>Meu espaço <span class="slash">/</span> <strong id="breadcrumb">Nova campanha</strong></span>
+        <div class="top-actions"><span class="badge" id="connection-badge"></span><button class="icon-button" id="theme-toggle" aria-label="Alternar tema"><i data-lucide="sun-moon"></i></button></div>
+      </header>
+      <main id="content">
+        <!-- O título pertence a esta página; o JavaScript preenche os dados abaixo. -->
+        <div class="page-heading"><div><p class="eyebrow">SEU CANAL</p><h1>Telegram, conectado ao seu espaço.</h1><p>Configure o bot no Supabase e verifique a conexão aqui.</p></div></div>
+        <div id="page-content"></div>
+      </main>
+      <footer>DevNox <span>Feito para conectar pessoas.</span><span>Telegram</span></footer>
+    </div>
+    <dialog id="modal"></dialog>
+  </template>
+
+  <noscript>Ative o JavaScript para acessar sua conta e gerenciar os contatos.</noscript>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>

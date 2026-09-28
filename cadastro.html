@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101c19" />
+  <title>Criar conta · DevNox</title>
+  <link rel="stylesheet" href="./src/style.css" />
+  <script src="./vendor/supabase.js"></script>
+  <script src="./vendor/lucide.min.js"></script>
+</head>
+
+<body data-page="signup">
+  <div id="app"><main class="startup-error"><h1>DevNox · Telegram</h1><p>Carregando seu espaço...</p></main></div>
+  <!-- Formulário de entrada. main.js alterna entre login e cadastro. -->
+  <template id="auth-template">
+    <div class="auth-layout">
+      <section class="auth-story">
+        <a class="brand" href="./index.html"><i data-lucide="send"></i>DevNox.</a>
+        <div><p class="eyebrow">MENSAGENS QUE CONECTAM</p><h1>Mais perto.<br>Uma conversa<br>de cada vez.</h1><p>Seu público, seus canais e suas ideias.<br>Todos no mesmo lugar.</p><div class="auth-channels"><i data-lucide="send"></i>Telegram</div></div>
+        <small>DevNox · Central de mensagens</small>
+      </section>
+      <section class="auth-panel"><div>
+        <p class="eyebrow">SEU PRÓXIMO PASSO</p>
+        <h1 id="auth-title">Vamos começar?</h1>
+        <p id="auth-description">Crie sua conta para conectar suas conversas.</p>
+        <div id="auth-demo-notice" class="notice" hidden>Demonstração disponível. Conecte o Supabase para criar uma conta real.</div>
+        <form id="auth-form">
+          <div id="signup-fields" hidden>
+            <label class="field">Seu nome<input name="name" autocomplete="name" disabled></label>
+            <label class="field">Telefone<input name="phone" type="tel" autocomplete="tel" disabled></label>
+          </div>
+          <label class="field">E-mail<input name="email" type="email" required autocomplete="email"></label>
+          <label class="field">Senha<input name="password" type="password" required minlength="8" autocomplete="current-password"></label>
+          <button class="button primary" id="auth-submit">Entrar</button>
+        </form>
+        <p class="auth-switch"><span id="auth-switch-label">Primeira vez aqui?</span> <button class="text-button" id="auth-switch">Criar conta</button></p>
+        <button class="button secondary" id="demo-enter" hidden>Explorar demonstração →</button>
+        <p id="auth-feedback" role="status"></p>
+      </div></section>
+    </div>
+  </template>
+  <noscript>Ative o JavaScript para acessar sua conta e gerenciar os contatos.</noscript>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,10 @@
+project_id = "devnox"
+
+[functions.channel-status]
+verify_jwt = false
+# Validação explícita com auth.getUser no handler.
+
+[functions.dispatch-worker]
+verify_jwt = false
+# Autenticado pelo segredo WORKER_SECRET.
+
